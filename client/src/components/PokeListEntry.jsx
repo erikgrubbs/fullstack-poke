@@ -5,7 +5,8 @@ class PokeListEntry extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      select: false
+      select: false,
+      type: this.props.pokemon.type
     };
   }
 
@@ -32,7 +33,7 @@ class PokeListEntry extends React.Component {
               style={{ display: "inline-block", width: "auto" }}
               onClick={() => this.setState({ select: true })}
             >
-              {this.props.pokemon.type}
+              {this.state.type}
             </p>
           )
         ) : null}
